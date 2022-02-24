@@ -13,11 +13,15 @@
     <h4>longitude: <span class="long"></span>&deg;</h4>
 </body>
 <script>
-    navigator.geolocation.getCurrentPosition((position) => {
+    if('geolocation' in navigator) {
+       navigator.geolocation.getCurrentPosition((position) => {
         const latitude = position.coords.latitude
         const longitude = position.coords.longitude
         document.getElementsByClassName("lat")[0].innerText  = latitude;
         document.getElementsByClassName("long")[0].innerText  = longitude;
     });
+    } else {
+        console.log("geolocation not available")
+    }
 </script>
 </html>
