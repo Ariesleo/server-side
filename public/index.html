@@ -8,5 +8,16 @@
 </head>
 <body>
     <div>Hello from the server side</div>
+    <br />
+    <h4>latitude: <span class="lat"></span>&deg;</h4>
+    <h4>longitude: <span class="long"></span>&deg;</h4>
 </body>
+<script>
+    navigator.geolocation.getCurrentPosition((position) => {
+        const latitude = position.coords.latitude
+        const longitude = position.coords.longitude
+        document.getElementsByClassName("lat")[0].innerText  = latitude;
+        document.getElementsByClassName("long")[0].innerText  = longitude;
+    });
+</script>
 </html>
