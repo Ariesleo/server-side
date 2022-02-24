@@ -4,3 +4,5 @@ const app = express()
 app.listen(3000, () => {
     console.log('listening to you')
 })
+
+app.use(express.static('public'))
